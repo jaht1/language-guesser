@@ -29,7 +29,7 @@ public class LanguageStats {
         LangLabel leastDif = LangLabel.OK;
 
         String b = "";
-        b += "Språk      Analys1        Analys2                 Analys 3                    Kombinerat medeltal\n";
+        b += "Språk      Analys1      Analys2        Analys 3          Kombinerat medeltal\n";
         // Loopa igenom språken
         for (LangLabel v : LangLabel.values()) {
             if (v != LangLabel.OK) {
@@ -53,8 +53,12 @@ public class LanguageStats {
                 }
                 th = Math.abs(l.getAverageOfThree() - input.getAverageOfThree());
                 first = Math.abs(l.getAverageOfFirst() - input.getAverageOfFirst());
-
-                b += v + "           " + dif + "       " + th + "      " + first + "      " + ((dif + th + first) / 3)
+                double combo = (dif + th + first) / 3;
+                dif = Math.round(dif * 100.0) / 100.0;
+                th = Math.round(th * 100.0) / 100.0;
+                first = Math.round(first * 100.0) / 100.0;
+                
+                b += v + "         " + dif + "        " + th + "            " + first + "               " +  Math.round(combo * 100.0) / 100.0 /*Math.round((combo * 100.0) / 100.0)*/
                         + "\n\n";
                 // Körs en gång i början av programmet
                 if (totSum == 0.0) {

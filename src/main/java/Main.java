@@ -9,8 +9,10 @@ public class Main {
 		String text = ui.UserInterface();
 		Language user = langStats.checkLanguageStats(text);
 
-		ui.printText(langStats.calculateCharByThree());
-		ui.printText(langStats.firstChar());
+		//ui.printText(langStats.calculateCharByThree());
+		langStats.calculateCharByThree();
+		//ui.printText(langStats.firstChar());
+		langStats.firstChar();
 		ui.printText(langStats.guessLanguage(user));
 		// Utils.textIntoArray(text);
 		langStats.firstChar();

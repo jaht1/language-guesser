@@ -177,7 +177,7 @@ public class Language {
         for (Character key : keys) {
             // Räkna procentuella andelen av bokstaven i texten
 
-            double d = ((double) firstChar.get(key) / (double) words.length) * 100.0;
+            double d = ((double) firstChar.get(key) / (double) content.length()) * 100.0;
             d = (d * 100.0) / 100.0;
             firstCharPercent.put(key, d);
             firstCounter++;
